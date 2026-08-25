@@ -1,10 +1,12 @@
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
-import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import { SSEServerTransport } from "@modelcontextprotocol/sdk/server/sse.js"; // 改用 SSE
 import {
   CallToolRequestSchema,
   ListToolsRequestSchema,
   Tool,
 } from "@modelcontextprotocol/sdk/types.js";
+import express, { Request, Response } from "express";
+import cors from "cors";
 import fs from "fs";
 import path from "path";
 import WebSocket from "ws";
@@ -530,10 +532,49 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
   throw new Error(`未知的工具: ${name}`);
 });
 
-async function main() {
-  const transport = new StdioServerTransport();
-  await server.connect(transport);
-  console.error("Digital Human Video MCP Server 啟動中 (stdio)");
-}
+// ==========================================
+// 7. Express + SSE 遠端連線服務
+// ==========================================
+const app = express();
+app.use(cors());
+app.use(express.json());
 
-main().catch(console.error);
+// 儲存不同客戶端的 SSE Session
+const transports = new Map<string, SSEServerTransport>();
+
+// 1. 同事端 MCP 連線建立端點
+app.get("/sse", async (req: Request, res: Response) => {
+  console.log("收到新的 SSE 連線請求");
+  const transport = new SSEServerTransport("/messages", res);
+  const sessionId = transport.sessionId;
+  transports.set(sessionId, transport);
+
+  res.on("close", () => {
+    console.log(`SSE 連線關閉: ${sessionId}`);
+    transports.delete(sessionId);
+  });
+
+  await server.connect(transport);
+});
+
+// 2. 同事端 MCP 訊息溝通端點
+app.post("/messages", async (req: Request, res: Response) => {
+  const sessionId = req.query.sessionId as string;
+  const transport = transports.get(sessionId);
+
+  if (transport) {
+    await transport.handlePostMessage(req, res);
+  } else {
+    res.status(400).send("Session not found or expired");
+  }
+});
+
+// 3. 監聽 0.0.0.0 允許局域網外部電腦連入
+const PORT = Number(process.env.PORT) || 3000;
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`=================================================`);
+  console.log(`🚀 Digital Human Video MCP Server (SSE) 已啟動！`);
+  console.log(`• 本地端點: http://localhost:${PORT}/sse`);
+  console.log(`• 請提供給同事: http://<你的區域IP>:${PORT}/sse`);
+  console.log(`=================================================`);
+});
