@@ -1,0 +1,236 @@
+[
+  {
+    "id": "16f174e1-de57-4dad-93d1-ab71dd67212d",
+    "status": "failed",
+    "createdAt": "2026-08-20T08:34:48.870Z",
+    "updatedAt": "2026-08-20T08:34:53.968Z",
+    "workflowId": "image_to_video",
+    "workflowName": "圖生影片",
+    "promptId": "d063f149-4a75-4cca-9c9e-a25b7cc42508",
+    "startedAt": "2026-08-20T08:34:53.952Z",
+    "error": {
+      "code": "VIDEO_OUTPUT_MISSING",
+      "message": "VIDEO_OUTPUT_MISSING"
+    }
+  },
+  {
+    "id": "e4a646b0-ff47-4149-8fb7-1ebaee69204a",
+    "status": "failed",
+    "createdAt": "2026-08-20T08:36:34.753Z",
+    "updatedAt": "2026-08-20T08:36:39.843Z",
+    "workflowId": "image_to_video",
+    "workflowName": "圖生影片",
+    "promptId": "815a58a6-0b09-4f98-b711-7559a6ca6b40",
+    "startedAt": "2026-08-20T08:36:39.829Z",
+    "error": {
+      "code": "VIDEO_OUTPUT_MISSING",
+      "message": "VIDEO_OUTPUT_MISSING"
+    }
+  },
+  {
+    "id": "f7fd92af-395c-4e24-a270-12952171301f",
+    "status": "failed",
+    "createdAt": "2026-08-20T08:40:30.813Z",
+    "updatedAt": "2026-08-20T08:40:46.486Z",
+    "workflowId": "image_to_video",
+    "workflowName": "圖生影片",
+    "promptId": "92659351-ef2a-46c2-bc47-df3a6b6fab3a",
+    "startedAt": "2026-08-20T08:40:35.891Z",
+    "error": {
+      "code": "VIDEO_OUTPUT_MISSING",
+      "message": "VIDEO_OUTPUT_MISSING"
+    }
+  },
+  {
+    "id": "99db58ba-2dbe-4d51-8d71-241776efdf54",
+    "status": "completed",
+    "createdAt": "2026-08-20T08:40:52.320Z",
+    "updatedAt": "2026-08-20T08:46:54.088Z",
+    "workflowId": "image_to_video",
+    "workflowName": "圖生影片",
+    "promptId": "76f235f1-6103-424f-a2dd-c2fa23009777",
+    "queuePosition": 0,
+    "startedAt": "2026-08-20T08:40:57.393Z",
+    "completedAt": "2026-08-20T08:46:54.088Z",
+    "output": {
+      "filename": "stable_4v4a_00022-audio.mp4",
+      "subfolder": "MiniMaxH3",
+      "type": "output"
+    },
+    "result": {
+      "success": true,
+      "outputType": "video",
+      "outputUrl": "/api/video/jobs/99db58ba-2dbe-4d51-8d71-241776efdf54/result",
+      "promptId": "76f235f1-6103-424f-a2dd-c2fa23009777"
+    }
+  },
+  {
+    "id": "74b715e2-a9ab-4004-a611-a8c09f9d1903",
+    "status": "completed",
+    "createdAt": "2026-08-20T08:50:24.564Z",
+    "updatedAt": "2026-08-20T08:56:25.179Z",
+    "workflowId": "image_to_video",
+    "workflowName": "圖生影片",
+    "promptId": "eb80b0d7-b989-459a-bea1-aa544937a46d",
+    "queuePosition": 0,
+    "startedAt": "2026-08-20T08:50:29.634Z",
+    "completedAt": "2026-08-20T08:56:25.179Z",
+    "output": {
+      "filename": "stable_4v4a_00023-audio.mp4",
+      "subfolder": "MiniMaxH3",
+      "type": "output"
+    },
+    "result": {
+      "success": true,
+      "outputType": "video",
+      "outputUrl": "/api/video/jobs/74b715e2-a9ab-4004-a611-a8c09f9d1903/result",
+      "promptId": "eb80b0d7-b989-459a-bea1-aa544937a46d"
+    }
+  },
+  {
+    "id": "8f479c48-5e0c-4b22-b76c-0855493709b4",
+    "status": "completed",
+    "createdAt": "2026-08-20T09:01:19.074Z",
+    "updatedAt": "2026-08-20T09:07:28.803Z",
+    "workflowId": "image_to_video",
+    "workflowName": "圖生影片",
+    "promptId": "cba6ae08-be3d-4d4c-8a39-544ba4c13a8b",
+    "queuePosition": 0,
+    "startedAt": "2026-08-20T09:01:24.162Z",
+    "completedAt": "2026-08-20T09:07:28.803Z",
+    "output": {
+      "filename": "stable_4v4a_00024-audio.mp4",
+      "subfolder": "MiniMaxH3",
+      "type": "output"
+    },
+    "result": {
+      "success": true,
+      "outputType": "video",
+      "outputUrl": "/api/video/jobs/8f479c48-5e0c-4b22-b76c-0855493709b4/result",
+      "promptId": "cba6ae08-be3d-4d4c-8a39-544ba4c13a8b"
+    }
+  },
+  {
+    "id": "8aa5a693-5800-4d22-8131-a8f5588faf9c",
+    "status": "completed",
+    "createdAt": "2026-08-20T09:09:53.888Z",
+    "updatedAt": "2026-08-20T09:15:56.522Z",
+    "workflowId": "image_to_video",
+    "workflowName": "圖生影片",
+    "promptId": "4923ab65-aa85-40a3-ab57-b704263a0072",
+    "queuePosition": 0,
+    "startedAt": "2026-08-20T09:09:58.973Z",
+    "completedAt": "2026-08-20T09:15:56.522Z",
+    "output": {
+      "filename": "stable_4v4a_00025-audio.mp4",
+      "subfolder": "MiniMaxH3",
+      "type": "output"
+    },
+    "result": {
+      "success": true,
+      "outputType": "video",
+      "outputUrl": "/api/video/jobs/8aa5a693-5800-4d22-8131-a8f5588faf9c/result",
+      "promptId": "4923ab65-aa85-40a3-ab57-b704263a0072"
+    }
+  },
+  {
+    "id": "434f2d5a-ea70-4dca-a2a0-be735cc2e7a7",
+    "status": "failed",
+    "createdAt": "2026-08-20T09:23:13.920Z",
+    "updatedAt": "2026-08-20T09:28:25.120Z",
+    "workflowId": "image_to_video",
+    "workflowName": "圖生影片",
+    "promptId": "605575f3-1369-4d72-a022-ae728698e38f",
+    "startedAt": "2026-08-20T09:23:18.999Z",
+    "error": {
+      "code": "VIDEO_OUTPUT_MISSING",
+      "message": "VIDEO_OUTPUT_MISSING"
+    }
+  },
+  {
+    "id": "d44bae18-1e4b-4206-8cb8-716486462c6d",
+    "status": "failed",
+    "createdAt": "2026-08-20T09:27:06.987Z",
+    "updatedAt": "2026-08-20T09:29:46.012Z",
+    "workflowId": "image_to_video",
+    "workflowName": "圖生影片",
+    "promptId": "1b35b816-8b28-4103-94dc-a8a249e0c342",
+    "startedAt": "2026-08-20T09:28:22.328Z",
+    "error": {
+      "code": "fetch failed",
+      "message": "fetch failed"
+    }
+  },
+  {
+    "id": "26bc8cd9-c213-415e-b022-4b5ad483e837",
+    "status": "failed",
+    "createdAt": "2026-08-24T07:01:11.115Z",
+    "updatedAt": "2026-08-24T07:01:11.145Z",
+    "workflowId": "image_to_video",
+    "workflowName": "圖生影片",
+    "error": {
+      "code": "COMFYUI_SUBMIT_FAILED",
+      "message": "COMFYUI_SUBMIT_FAILED: {\"error\": {\"type\": \"prompt_outputs_failed_validation\", \"message\": \"Prompt outputs failed validation\", \"details\": \"\", \"extra_info\": {}}, \"node_errors\": {\"45\": {\"errors\": [{\"type\": \"custom_validation_failed\", \"message\": \"Custom validation failed for node\", \"details\": \"image - Invalid image file: image_input_bc5a0656-2aee-4232-8084-be3d770a292b.png\", \"extra_info\": {\"input_name\": \"image\"}}], \"dependent_outputs\": [\"50\"], \"class_type\": \"LoadImage\"}}}"
+    }
+  },
+  {
+    "id": "898f108e-1430-49f6-9e59-58ceb0a36532",
+    "status": "failed",
+    "createdAt": "2026-08-24T07:19:15.858Z",
+    "updatedAt": "2026-08-24T07:19:15.912Z",
+    "workflowId": "image_to_video",
+    "workflowName": "圖生影片",
+    "error": {
+      "code": "COMFYUI_SUBMIT_FAILED",
+      "message": "COMFYUI_SUBMIT_FAILED: {\"error\": {\"type\": \"prompt_outputs_failed_validation\", \"message\": \"Prompt outputs failed validation\", \"details\": \"\", \"extra_info\": {}}, \"node_errors\": {\"45\": {\"errors\": [{\"type\": \"custom_validation_failed\", \"message\": \"Custom validation failed for node\", \"details\": \"image - Invalid image file: image_input_e63e5f52-7280-4415-9473-f19d327aaf6f.png\", \"extra_info\": {\"input_name\": \"image\"}}], \"dependent_outputs\": [\"50\"], \"class_type\": \"LoadImage\"}}}"
+    }
+  },
+  {
+    "id": "40e31d4a-a709-4f66-95f7-3ad8683655d5",
+    "status": "failed",
+    "createdAt": "2026-08-24T07:37:21.483Z",
+    "updatedAt": "2026-08-24T07:37:21.521Z",
+    "workflowId": "image_to_video",
+    "workflowName": "圖生影片",
+    "error": {
+      "code": "COMFYUI_SUBMIT_FAILED",
+      "message": "COMFYUI_SUBMIT_FAILED: {\"error\": {\"type\": \"prompt_outputs_failed_validation\", \"message\": \"Prompt outputs failed validation\", \"details\": \"\", \"extra_info\": {}}, \"node_errors\": {\"45\": {\"errors\": [{\"type\": \"custom_validation_failed\", \"message\": \"Custom validation failed for node\", \"details\": \"image - Invalid image file: image_input_48fad2a4-94f1-4f7f-a985-1612e0c5e5ec.png\", \"extra_info\": {\"input_name\": \"image\"}}], \"dependent_outputs\": [\"50\"], \"class_type\": \"LoadImage\"}}}"
+    }
+  },
+  {
+    "id": "0a056107-c5f8-41fd-b9b5-30790ae4a2ff",
+    "status": "failed",
+    "createdAt": "2026-08-24T07:43:56.082Z",
+    "updatedAt": "2026-08-24T07:43:56.093Z",
+    "workflowId": "image_to_video",
+    "workflowName": "圖生影片",
+    "error": {
+      "code": "WORKFLOW_NOT_FOUND",
+      "message": "WORKFLOW_NOT_FOUND: (8步极速)10Eros Test4双时钟图生视频.json"
+    }
+  },
+  {
+    "id": "fb7defae-ffa8-4477-81bb-228ce85e566c",
+    "status": "failed",
+    "createdAt": "2026-08-24T07:44:24.770Z",
+    "updatedAt": "2026-08-24T07:44:24.793Z",
+    "workflowId": "image_to_video",
+    "workflowName": "圖生影片",
+    "error": {
+      "code": "WORKFLOW_NOT_FOUND",
+      "message": "WORKFLOW_NOT_FOUND: (8步极速)10Eros Test4双时钟图生视频_首尾幀.json"
+    }
+  },
+  {
+    "id": "c4a7e0e8-7708-4249-aefc-f9ddaf632f17",
+    "status": "failed",
+    "createdAt": "2026-08-24T07:49:04.183Z",
+    "updatedAt": "2026-08-24T07:49:04.199Z",
+    "workflowId": "image_to_video",
+    "workflowName": "圖生影片",
+    "error": {
+      "code": "WORKFLOW_NOT_FOUND",
+      "message": "WORKFLOW_NOT_FOUND: (8步极速)10Eros Test4双时钟图生视频.json"
+    }
+  }
+]

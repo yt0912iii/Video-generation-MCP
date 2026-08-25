@@ -1,0 +1,323 @@
+{
+  "6": {
+    "inputs": {
+      "prompt": [
+        "36",
+        0
+      ],
+      "width": [
+        "16",
+        0
+      ],
+      "height": [
+        "16",
+        1
+      ],
+      "length": [
+        "15",
+        1
+      ],
+      "task_type": "FL2VA",
+      "audio_mode": "native",
+      "audio_denoise_strength": 1,
+      "add_source_as_reference": false,
+      "prompt_primary_audio_ordinal": 0,
+      "strict_prompt_tags": true,
+      "ref_image_size": "match",
+      "reference_video_policy": "official_2_to_15s",
+      "allow_above_reference_area": {
+        "__value__": [
+          false,
+          true
+        ]
+      },
+      "speak_and_recognation": {
+        "__value__": [
+          false,
+          true
+        ]
+      },
+      "clip": [
+        "38",
+        0
+      ],
+      "video_vae": [
+        "39",
+        0
+      ],
+      "audio_vae": [
+        "40",
+        0
+      ],
+      "first_frame": [
+        "45",
+        0
+      ],
+      "last_frame": [
+        "51",
+        0
+      ]
+    },
+    "class_type": "MiniMaxH3AudioConditioningT8",
+    "_meta": {
+      "title": "MiniMax H3 Audio Conditioning (T8)"
+    }
+  },
+  "7": {
+    "inputs": {
+      "steps": 8,
+      "shift_video": 12,
+      "shift_audio": 3,
+      "sampler_name": "dual_clock_euler",
+      "scheduler": "native_flow",
+      "model": [
+        "43",
+        0
+      ],
+      "av_latent": [
+        "6",
+        1
+      ]
+    },
+    "class_type": "MiniMaxH3DualClockSamplerT8",
+    "_meta": {
+      "title": "STABLE 4 video / 4 audio"
+    }
+  },
+  "8": {
+    "inputs": {
+      "model": [
+        "7",
+        0
+      ],
+      "conditioning": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "BasicGuider",
+    "_meta": {
+      "title": "基礎引導器"
+    }
+  },
+  "9": {
+    "inputs": {
+      "noise_seed": 373467687277189
+    },
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "隨機雜訊"
+    }
+  },
+  "10": {
+    "inputs": {
+      "noise": [
+        "9",
+        0
+      ],
+      "guider": [
+        "8",
+        0
+      ],
+      "sampler": [
+        "7",
+        1
+      ],
+      "sigmas": [
+        "7",
+        2
+      ],
+      "latent_image": [
+        "6",
+        1
+      ]
+    },
+    "class_type": "SamplerCustomAdvanced",
+    "_meta": {
+      "title": "SamplerCustomAdvanced"
+    }
+  },
+  "11": {
+    "inputs": {
+      "av_latent": [
+        "10",
+        0
+      ],
+      "video_vae": [
+        "39",
+        0
+      ],
+      "audio_vae": [
+        "40",
+        0
+      ]
+    },
+    "class_type": "MiniMaxH3AVDecodeT8",
+    "_meta": {
+      "title": "MiniMax H3 AV Decode (T8)"
+    }
+  },
+  "14": {
+    "inputs": {
+      "value": 15
+    },
+    "class_type": "PrimitiveFloat",
+    "_meta": {
+      "title": "Float (duration)"
+    }
+  },
+  "15": {
+    "inputs": {
+      "expression": "max(5, round(a * 24)) + (5 - (max(5, round(a * 24)) % 17)) % 17",
+      "speak_and_recognation": {
+        "__value__": [
+          false,
+          true
+        ]
+      },
+      "values.a": [
+        "14",
+        0
+      ]
+    },
+    "class_type": "ComfyMathExpression",
+    "_meta": {
+      "title": "數學運算式"
+    }
+  },
+  "16": {
+    "inputs": {
+      "aspect_ratio": "9:16 (Portrait Widescreen)",
+      "megapixels": 0.7,
+      "multiple": 32
+    },
+    "class_type": "ResolutionSelector",
+    "_meta": {
+      "title": "解析度選擇器"
+    }
+  },
+  "17": {
+    "inputs": {
+      "model": [
+        "49",
+        0
+      ]
+    },
+    "class_type": "MiniMaxH3MemoryEfficientSageAttentionPatch",
+    "_meta": {
+      "title": "MiniMax H3 Mem Eff Sage Attention Patch"
+    }
+  },
+  "36": {
+    "inputs": {
+      "prompt": "[Shot 1] 畫面精確起始於<Subject 1>（主角）的正面近景，必須 100% 鎖定並完美重現 <Picture 1> 中主角的面貌特徵、髮型與居家服裝。主角身處深夜的書房中，四周堆滿了厚重的專業書籍與凌亂的筆記。桌上一盞溫暖的檯燈點亮了主角專注且略顯疲憊的面容。主角正微微低頭，右手握著筆在紙上快速記錄，眼神中充滿了對知識的渴望。\n\n[Shot 2] At 00:03.000, 鏡頭緩慢拉遠並開始環繞橫移（主角的臉部輪廓、五官與居家衣著嚴格保持與首幀完全一致，絕不可變形或演變成他人）。隨著時間推移，畫面呈現縮時攝影（Timelapse）般的光影變化，書房窗外的夜空由黑夜逐漸轉為黎明。無數發光的數位文字、算式與圖表粒子開始從主角眼前的書本中升騰而起，如同半透明的金黃色星河，環繞著主角的身體緩慢旋轉，象徵知識的吸收。\n\n[Shot 3] At 00:06.500, 鏡頭推近至主角的側臉特寫。此時周圍的金色數據星河旋轉速度加快，化為實體化的流光融入主角的腦海與身體（主角的臉部細節、髮型在強烈光影折射下維持絕對穩定，人物長相與 <Picture 1> 毫無二致）。主角在此刻緩慢地抬起頭，原本疲憊的眼神瞬間變得無比堅定與自信，嘴角微微上揚，完成了心智與知識的蛻變。\n\n[Shot 4] At 00:10.000, 鏡頭發生戲劇性的快速拉遠與場景轉換（Match Cut）。周圍幽暗的書房環境如魔方般快速翻轉、拆解，重組為一個宏大、明亮且充滿現代感的國際會議廳講台。主角在畫面中央，此時服裝流暢地轉換為一套筆挺俐落的專業西裝（但主角的五官特徵、臉部輪廓與髮型依然與 <Picture 1> 保持絕對一致，唯有眼神變得更加成熟自信）。主角自信地站在講台中央，身後是一面巨大的全息投影螢幕，上面正展示著完美的報告簡報。\n\n[Shot 5] At 00:13.000, 鏡頭緩緩推近至主角的正面半身構圖（此時主角的五官長相與首幀 <Picture 1> 完美吻合，沒有任何畫面崩壞或身分變形）。主角氣定神閒地面對台下無數的聽眾與鏡頭，大氣地抬起右手作出總結的手勢。身後大螢幕上的數據完美定格，台下隨之爆發出金色的掌聲光芒粒子，溫暖地映照在主角的西裝上。主角目光如炬地注視前方，姿態與首幀在書房時的專注精確呼應，作為成功的定格留存至畫面結束。\n\noverall_soundscape: 初期空間極其安靜，僅有深夜微弱的蟲鳴、紙張翻動的沙沙聲與筆尖寫字的摩擦聲。數據星河出現時伴隨輕盈、空靈的合成器流動聲；場景轉換時，傳來一陣大氣、開闊的空間翻轉風聲；最終站上講台時，瞬間切換為宏大的演講廳空間迴響，並伴隨著台下雷鳴般的掌聲與歡呼聲，隨後收束在平靜的環境音中。\n\nnon_diegetic_music: 勵志且具備史詩感的蛻變配樂。開場以緩慢、溫柔的單音鋼琴鋪底，營造深夜孤獨奮鬥的氛圍。隨著數據光流凝聚，弦樂漸漸加入，節奏變得緊湊。在場景轉換至講台的瞬間，管弦樂與銅管驟然爆發，擴展為寬廣、高亢且充滿榮耀感的史詩交響樂，將氣氛推向最高潮。最終隨畫面定格，音樂迅速收束為一個純淨、有力的和弦迴響，緩慢淡出。",
+      "speak_and_recognation": {
+        "__value__": [
+          false,
+          true
+        ]
+      }
+    },
+    "class_type": "CR Prompt Text",
+    "_meta": {
+      "title": "⚙️ CR Prompt Text"
+    }
+  },
+  "38": {
+    "inputs": {
+      "clip_name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+      "type": "minimax",
+      "device": "default"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": {
+      "title": "載入 CLIP"
+    }
+  },
+  "39": {
+    "inputs": {
+      "vae_name": "minimax_h3_video_vae_fp16.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "載入 VAE"
+    }
+  },
+  "40": {
+    "inputs": {
+      "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "載入 VAE"
+    }
+  },
+  "43": {
+    "inputs": {
+      "lora_name": "minimax_h3_turbo_4step_10ErosMax_test4_pruned_curveproj1025_exp_v001-T8.safetensors",
+      "strength_model": 1,
+      "model": [
+        "17",
+        0
+      ]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": {
+      "title": "LoraLoaderModelOnly"
+    }
+  },
+  "45": {
+    "inputs": {
+      "image": "3R890987.jpg"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "載入圖片"
+    }
+  },
+  "49": {
+    "inputs": {
+      "unet_name": "10Eros_Max_h3_fl2va_bf16_test4_pruned.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "載入擴散模型"
+    }
+  },
+  "50": {
+    "inputs": {
+      "frame_rate": 24,
+      "loop_count": 0,
+      "filename_prefix": "MiniMaxH3/stable_4v4a",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 19,
+      "save_metadata": true,
+      "trim_to_audio": false,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "11",
+        0
+      ],
+      "audio": [
+        "11",
+        1
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "51": {
+    "inputs": {
+      "image": "ComfyUI_00832_.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "載入圖片"
+    }
+  }
+}

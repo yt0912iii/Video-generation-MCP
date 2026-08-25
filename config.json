@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "digital-human-generator": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "tsx",
+        "D:/你的專案路徑/digital-human-video-generator/mcp-server.ts"
+      ],
+      "env": {
+        "COMFYUI_BASE_URL": "http://127.0.0.1:8188"
+      }
+    }
+  }
+}
